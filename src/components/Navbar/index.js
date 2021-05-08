@@ -27,7 +27,7 @@ function Navbar() {
           textColor="primary"
           centered
         >
-          <Tab component={Link} label="Login" to="/" />
+          <Tab component={Link} label="Login" to="/login" />
           <Tab component={Link} label="What We Do" to="/about" />
           <Tab component={Link} label="Available Subjects" to="/subject" />
           <Tab component={Link} label="Who We Are" to="/staff" />

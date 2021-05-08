@@ -6,7 +6,6 @@ import Signup from "./pages/Signup";
 import About from "./pages/About";
 import Staff from "./pages/Staff";
 import Subject from "./pages/Subject";
-import "./App.css";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 
 const theme = createMuiTheme({
@@ -23,9 +22,9 @@ const theme = createMuiTheme({
 function App() {
   return (
     <Router>
+      <Navbar />
       <ThemeProvider theme={theme}>
-        <Navbar />
-        <Route exact path="/" component={Login} />
+        <Route exact path={["/", "/login"]} component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/about" component={About} />
         <Route path="/staff" component={Staff} />

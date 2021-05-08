@@ -30,6 +30,7 @@ function Subject() {
         "Develop websites with a lot more horsepower under the hood.",
     },
   ];
+
   return (
     <div
       style={{ flexGrow: 1, width: "550px", margin: "auto", marginTop: "5%" }}
