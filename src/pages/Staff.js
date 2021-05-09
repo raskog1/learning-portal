@@ -8,24 +8,27 @@ function Staff() {
       name: "Amar Mann",
       position: "CEO",
       bio: "I am the CEO of this company!  All bow before me!",
-      image: "../assets/images/25.jpg",
+      image: "../assets/images/amar.jpg",
     },
     {
       name: "Todd Chavez",
       position: "Front End Engineer",
-      bio: "lorem ipsum",
+      bio:
+        "Spicing things up on the front end with power combo of HTML, CSS, and React.",
       image: "../assets/images/14.jpg",
     },
     {
       name: "Princess Caroline",
       position: "Back End Engineer",
-      bio: "lorem ipsum",
+      bio:
+        "Reliable as ever, no difference if it's a SQL database or a noSQL database, I'll get your data.",
       image: "../assets/images/9.jpg",
     },
     {
       name: "Bojack Horseman",
       position: "Intern",
-      bio: "lorem ispum",
+      bio:
+        "It gets easier every day.  That's the hard part, you gotta do it every day.  But it does get easier.",
       image: "../assets/images/7.jpg",
     },
   ];

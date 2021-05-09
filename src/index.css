@@ -2,10 +2,22 @@
   box-sizing: border-box;
 }
 
-body {
-  background-image: url("./assets/images/sharon-mccutcheon-eMP4sYPJ9x0-unsplash.jpg");
-
+body,
+html {
   height: 100%;
+  margin: 0;
+}
+
+body {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.42) 49%,
+      rgba(0, 0, 0, 0.61) 100%
+    ),
+    url("./assets/images/sharon-mccutcheon-eMP4sYPJ9x0-unsplash.jpg");
+
+  min-height: 100%;
 
   background-repeat: no-repeat;
   background-size: cover;
