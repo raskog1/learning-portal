@@ -1,0 +1,56 @@
+[
+    {
+        "title": "Is anyone else struggling with React?",
+        "content": "For some reason, I'm just not understanding it.  How far do we break down components?  Should each HTML element be it's own component?  This seems super confusing.",
+        "author": "frogman",
+        "date": "5/15/2021",
+        "comments": [
+            {
+                "details": "I'm lost.",
+                "author": "swaglord",
+                "date": "5/16/2021"
+            },
+            {
+                "details": "I think you just need some more practice.  Components don't need to be broken down nearly that much.  Just take into account how you might reuse components, and where does the state/logic live in the application that deals with those componenents.  Keep at it!",
+                "author": "glass-half-full",
+                "date": "5/15/2021"
+            }
+        ]
+    },
+    {
+        "title": "HTML/CSS assessment is bugged.",
+        "content": "Each time I click on the assessment, it launches the JavaScript one instead.  Anyone else getting this error?",
+        "author": "riddler383",
+        "date": "5/14/2021",
+        "comments": [
+            {
+                "details": "Broken for me too",
+                "author": "coyote420",
+                "date": "5/14/2021"
+            },
+            {
+                "details": "Me too",
+                "author": "wHyAmIhErE",
+                "date": "5/14/2021"
+            },
+            {
+                "details": "F",
+                "author": "sharona",
+                "date": "5/14/2021"
+            }
+        ]
+    },
+    {
+        "title": "This website is really well designed!",
+        "content": "Maybe it's just me, but whoever designed this site was speaking from my muse.  Let's get some appreciation going in here!",
+        "author": "fanta-lover",
+        "date": "5/13/2021",
+        "comments": [
+            {
+                "details": "Whoever built this, I'm looking for an entry level full-stack intern with 12 years of experience.  Send me a message!",
+                "author": "byeFelicia",
+                "date": "5/17/2021"
+            }
+        ]
+    }
+]

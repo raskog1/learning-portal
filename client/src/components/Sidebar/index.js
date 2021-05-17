@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 // Components
 import { Button, Collapse, Divider, Drawer, List } from "@material-ui/core";
 import { ListItem, ListItemText } from "@material-ui/core";
-import { ExpandLess, ExpandMore, Streetview } from "@material-ui/icons";
+import { ExpandLess, ExpandMore } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {

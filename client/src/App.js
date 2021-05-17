@@ -2,7 +2,7 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // Utilities and Context
-import { AuthProvider, AuthContext } from "./utils/AuthContext";
+import { AuthProvider } from "./utils/AuthContext";
 // import setAuthToken from "./utils/setAuthToken";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import Private from "./routing/Private";
