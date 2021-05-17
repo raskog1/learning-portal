@@ -8,7 +8,7 @@ function StaffCard({ employee }) {
       <aside className="profile-card">
         <header>
           <a>
-            <img src={employee.image} />
+            <img src={employee.image} alt="Random employee" />
           </a>
           <h1>{employee.name}</h1>
           <h2>- {employee.position} -</h2>
