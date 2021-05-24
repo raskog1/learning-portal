@@ -19,6 +19,22 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    scores: [
+      {
+        name: {
+          type: String,
+          required: true,
+          unique: true,
+        },
+        score: {
+          type: Number,
+        },
+        completed: {
+          type: Boolean,
+          default: false,
+        },
+      },
+    ],
   },
   { timestampes: true }
 );

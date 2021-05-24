@@ -1,17 +1,65 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import axios from "axios";
+
+// Utilities and Context
+import { AuthContext } from "../../utils/AuthContext";
+import { makeStyles } from "@material-ui/core/styles";
 
 // Components
-import { Container, Divider } from "@material-ui/core";
+import { Button, Container, Divider, Typography } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+  pad: {
+    paddingTop: 20,
+    paddingBottom: 20,
+    display: "inline",
+  },
+  button: {
+    display: "inline",
+    float: "right",
+  },
+  root: {
+    padding: 24,
+  },
+}));
 
 function Scores() {
+  const [user, setUser] = useState({});
+  const { auth } = useContext(AuthContext);
+
+  const classes = useStyles();
+
+  useEffect(() => {
+    const getUser = async () => {
+      const currentUser = await axios.get("/api/users");
+      setUser(currentUser.data);
+    };
+    getUser();
+  }, []);
+
   return (
     <Container maxWidth="md">
-      <h1>Scores:</h1>
+      <Typography variant="h3" color="secondary" gutterBottom>
+        Scores:
+      </Typography>
       <Divider />
-      <h3>JavaScript: 86</h3>
-      <h3>React: 70</h3>
-      <h3>NodeJS: 98</h3>
-      <h3>HTML/CSS: 80</h3>
+      {user.scores &&
+        user.scores.map((test) => (
+          <Container className={classes.root}>
+            <Typography className={classes.pad} color="primary" variant="h5">
+              {test.name}: {test.score}
+            </Typography>
+            <Button
+              size="small"
+              variant="contained"
+              color="secondary"
+              className={classes.button}
+              // onClick={(e) => deletePost(e)}
+            >
+              Generate Certificate
+            </Button>
+          </Container>
+        ))}
       <Divider />
     </Container>
   );

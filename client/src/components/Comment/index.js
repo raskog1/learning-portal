@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // Utilities and Context
 import { makeStyles } from "@material-ui/core/styles";
@@ -35,7 +35,9 @@ function Comment({ comment }) {
       </Grid>
 
       <Grid item xs={9}>
-        <Typography gutterBottom>{comment.details}</Typography>
+        <Typography style={{ marginTop: 5 }} gutterBottom>
+          {comment.details}
+        </Typography>
       </Grid>
     </Grid>
   );

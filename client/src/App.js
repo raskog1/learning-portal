@@ -1,9 +1,9 @@
-// import React, { useEffect, useContext } from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // Utilities and Context
 import { AuthProvider } from "./utils/AuthContext";
-// import setAuthToken from "./utils/setAuthToken";
+import setAuthToken from "./utils/setAuthToken";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import Private from "./routing/Private";
 
@@ -27,17 +27,19 @@ const theme = createMuiTheme({
 });
 
 function App() {
-  // useEffect(() => {
-  //   if (localStorage.auth.token) {
-  //     setAuthToken(localStorage.auth.token);
-  //   } else {
-  //     setAuth({
-  //       ...auth,
-  //       isAuthenticated: false,
-  //       loading: false,
-  //     });
-  //   }
-  // });
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("auth"));
+    if (user.token) {
+      setAuthToken(user.token);
+    }
+    // else {
+    //   setAuth({
+    //     ...auth,
+    //     isAuthenticated: false,
+    //     loading: false,
+    //   });
+    // }
+  });
 
   return (
     <Router>

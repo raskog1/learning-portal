@@ -1,3 +1,6 @@
+// TODO:  Find more attractive method to open Sidebar
+// TODO:  Icon or logo?
+
 import React, { useState } from "react";
 
 // Utilities and Context
@@ -6,7 +9,7 @@ import { makeStyles } from "@material-ui/core/styles";
 // Components
 import { Button, Collapse, Divider, Drawer, List } from "@material-ui/core";
 import { ListItem, ListItemText } from "@material-ui/core";
-import { ExpandLess, ExpandMore } from "@material-ui/icons";
+import { DragHandle, ExpandLess, ExpandMore } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,6 +22,14 @@ const useStyles = makeStyles((theme) => ({
   },
   nested: {
     paddingLeft: theme.spacing(4),
+  },
+  sideways: {
+    textOrientation: "sideways",
+    transform: "rotate(90deg)",
+    position: "fixed",
+    top: "45%",
+    left: "-20px",
+    boxShadow: "none",
   },
 }));
 
@@ -38,8 +49,13 @@ function Sidebar({ drop, logout, setView, toggleDrop, user }) {
 
   return (
     <>
-      <Button onClick={toggleDrop} color="secondary">
-        Learn
+      <Button
+        onClick={toggleDrop}
+        className={classes.sideways}
+        variant="contained"
+        color="secondary"
+      >
+        <DragHandle />
       </Button>
       <Drawer
         open={drop.isOpen}
@@ -64,10 +80,10 @@ function Sidebar({ drop, logout, setView, toggleDrop, user }) {
             </ListItem>
             <ListItem
               button
-              onClick={() => changeView("social")}
-              key="Messages"
+              onClick={() => changeView("community")}
+              key="Community"
             >
-              <ListItemText primary="Messages" />
+              <ListItemText primary="Community" />
             </ListItem>
             <ListItem button onClick={handleClick} key="Assessments">
               <ListItemText primary="Assessments" />
@@ -78,21 +94,29 @@ function Sidebar({ drop, logout, setView, toggleDrop, user }) {
                 <ListItem
                   button
                   className={classes.nested}
-                  onClick={() => changeView("assess")}
+                  onClick={() => changeView("HTML")}
                 >
                   <ListItemText primary="HTML / CSS" />
                 </ListItem>
                 <ListItem
                   button
                   className={classes.nested}
-                  onClick={() => changeView("assess")}
+                  onClick={() => changeView("JavaScript")}
                 >
                   <ListItemText primary="JavaScript" />
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem
+                  button
+                  className={classes.nested}
+                  onClick={() => changeView("NodeJS")}
+                >
                   <ListItemText primary="NodeJS" />
                 </ListItem>
-                <ListItem button className={classes.nested}>
+                <ListItem
+                  button
+                  className={classes.nested}
+                  onClick={() => changeView("React")}
+                >
                   <ListItemText primary="React" />
                 </ListItem>
               </List>

@@ -67,4 +67,25 @@ router.get("/", auth, async (req, res) => {
   }
 });
 
+// PUT api/users
+// Add score to a user's test field
+// Private
+router.put("/", auth, async (req, res) => {
+  try {
+    const user = await User.findByIdAndUpdate(req.user.id, {
+      $push: {
+        scores: {
+          name: req.body.test,
+          score: req.body.score,
+          completed: true,
+        },
+      },
+    });
+    res.json(user);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("Server Error");
+  }
+});
+
 module.exports = router;

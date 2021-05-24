@@ -15,9 +15,15 @@ function Dashboard() {
   const [drop, setDrop] = useState({
     isOpen: false,
   });
-  const [view, setView] = useState("social");
+  const [view, setView] = useState("community");
 
   const getView = () => {
+    const findTest = auth.user.scores.find((test) => test.name === view);
+
+    if (findTest) {
+      return <Assessment test={view} complete={true} />;
+    }
+
     switch (view) {
       case "profile":
         return <Profile />;
@@ -25,10 +31,10 @@ function Dashboard() {
         return <Scores />;
       case "assess":
         return <Assessment />;
-      case "social":
+      case "community":
         return <Social />;
       default:
-        return <Social />;
+        return <Assessment test={view} complete={false} />;
     }
   };
 
@@ -64,5 +70,3 @@ function Dashboard() {
 }
 
 export default Dashboard;
-
-// Figure out how to keep track of what page is rendered at any time
