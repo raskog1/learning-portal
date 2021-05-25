@@ -186,7 +186,13 @@ function Profile() {
           <Typography variant="h5">Your Posts</Typography>
         </AccordionSummary>
         {posts.map((post) => (
-          <Post spacing={5} post={post} setOpen={setOpen} setId={setId} />
+          <Post
+            spacing={5}
+            post={post}
+            key={post._id}
+            setOpen={setOpen}
+            setId={setId}
+          />
         ))}
       </Accordion>
 

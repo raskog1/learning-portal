@@ -26,15 +26,17 @@ const useStyles = makeStyles((theme) => ({
 function Comment({ comment }) {
   const classes = useStyles();
 
+  const newDate = new Date(comment.date);
+
   return (
     <Grid container direction="row" justify="space-between">
-      <Grid item xs={3}>
+      <Grid item xs={4}>
         <Typography gutterBottom className={classes.caption} variant="caption">
-          {comment.author} - {comment.date}:
+          {comment.author} - {newDate.toLocaleString("en-US")}:
         </Typography>
       </Grid>
 
-      <Grid item xs={9}>
+      <Grid item xs={8}>
         <Typography style={{ marginTop: 5 }} gutterBottom>
           {comment.details}
         </Typography>

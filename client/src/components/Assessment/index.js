@@ -3,11 +3,12 @@
 // TODO:  Add alert to each question indicating correct/incorrect answer
 // TODO:  If score is already logged for this assessment, display a dif. message
 
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 
 // Utilities and Context
 import { makeStyles } from "@material-ui/core/styles";
+import { AuthContext } from "../../utils/AuthContext";
 
 // Components
 import Question from "../Question";
@@ -37,17 +38,9 @@ function Assessment({ complete, test }) {
   const [questions, setQuestions] = useState([]);
   const [submitted, setSubmitted] = useState(false);
 
-  useEffect(() => {
-    // if (complete) {
-    //   return (
-    //     <Container maxWidth="md">
-    //       <Typography variant="h3" color="secondary" gutterBottom>
-    //         You have already completed this assessment.
-    //       </Typography>
-    //     </Container>
-    //   );
-    // }
+  const { auth, setAuth } = useContext(AuthContext);
 
+  useEffect(() => {
     const getAssess = async () => {
       const assessment = await axios.get(`/api/assess/${test}`);
       if (!assessment.data) {
@@ -94,6 +87,10 @@ function Assessment({ complete, test }) {
         setSubmitted(true);
         setError(true);
       });
+
+      // axios.get("/api/users").then((data) => {
+      //   setAuth({ ...auth, user: data.data });
+      // });
     }
   };
 

@@ -1,5 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 // Utilities and Context
 import { AuthContext } from "../utils/AuthContext";
@@ -16,6 +17,14 @@ function Dashboard() {
     isOpen: false,
   });
   const [view, setView] = useState("community");
+
+  const { auth, setAuth } = useContext(AuthContext);
+
+  useEffect(() => {
+    axios.get("/api/users").then((data) => {
+      setAuth({ ...auth, user: data.data });
+    });
+  }, [view]);
 
   const getView = () => {
     const findTest = auth.user.scores.find((test) => test.name === view);
@@ -39,8 +48,6 @@ function Dashboard() {
   };
 
   const history = useHistory();
-
-  const { auth, setAuth } = useContext(AuthContext);
 
   const toggleDrop = () => {
     setDrop({ isOpen: !drop.isOpen });

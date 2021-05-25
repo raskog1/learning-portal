@@ -45,7 +45,7 @@ function Scores() {
       <Divider />
       {user.scores &&
         user.scores.map((test) => (
-          <Container className={classes.root}>
+          <Container className={classes.root} key={test.name}>
             <Typography className={classes.pad} color="primary" variant="h5">
               {test.name}: {test.score}
             </Typography>

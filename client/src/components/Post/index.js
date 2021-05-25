@@ -86,6 +86,8 @@ function Post({ post, setId, setOpen }) {
     }
   };
 
+  const newDate = new Date(post.date);
+
   return (
     <>
       <Accordion className={classes.transparent} expanded={expanded}>
@@ -103,7 +105,7 @@ function Post({ post, setId, setOpen }) {
               <Grid direction="column" justify="space-between">
                 <Typography gutterBottom>{post.content}</Typography>
                 <Typography gutterBottom variant="caption">
-                  {post.author} - {post.date}
+                  {post.author} - {newDate.toLocaleString("en-US")}
                 </Typography>
               </Grid>
             </Grid>
