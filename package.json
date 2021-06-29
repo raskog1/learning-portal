@@ -23,12 +23,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amarmann-92/learning-portal.git"
+    "url": "git+https://github.com/raskog1/learning-portal.git"
   },
-  "author": "Amar Mann",
+  "author": "Ryan Skog",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/amarmann-92/learning-portal/issues"
+    "url": "https://github.com/raskog1/learning-portal/issues"
   },
-  "homepage": "https://github.com/amarmann-92/learning-portal#readme"
+  "homepage": "https://github.com/raskog1/learning-portal#readme"
 }
