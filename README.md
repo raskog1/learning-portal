@@ -8,7 +8,7 @@ Built using the MERN stack, this application features secure login functionality
 
 Deployed application:
 
-https://your-personal-bookshelf.herokuapp.com/
+https://code-learning-portal.herokuapp.com/
 
 ## Usage
 
