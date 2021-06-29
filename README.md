@@ -12,7 +12,7 @@ https://code-learning-portal.herokuapp.com/
 
 ## Usage
 
-<img src="./client/public/demo.gif" alt="GIF of using the application"/>
+<img src="./client/public/assets/images/demo.gif" alt="GIF of using the application"/>
 
 ## Technology Used in Development
 
